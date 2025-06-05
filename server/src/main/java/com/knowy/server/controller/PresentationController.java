@@ -43,4 +43,17 @@ public class PresentationController {
 	public String example() {
 		return "pages/example";
 	}
+
+	//Simulating homepage
+	@GetMapping("/index")
+	public String viewIndexPage() {
+		return "pages/index";
+	}
+
+
+
+
+
+
+
 }

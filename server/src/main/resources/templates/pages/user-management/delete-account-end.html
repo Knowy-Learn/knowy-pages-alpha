@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es"
+	  layout:decorate="~{layouts/content-sidebar-layout}"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" th:href="@{/styles/pages/user-management.css}">
+	<title>User profile</title>
+</head>
+
+<body>
+
+<aside layout:fragment="sidebar" class="kn-aside user-sidebar">
+	<div class="user-info text-center mb-4">
+		<h3 class="mt-3 usernameTitle" th:text="${username}">Usuario</h3>
+	</div>
+	<div class="sidebar-menu">
+		<a th:href="@{/user-profile}" class="sidebar-link but"  data-sidebar-toggler="">Editar Perfil</a>
+		<button  class="sidebar-link" data-sidebar-toggler="" th:classappend="active">Gestión de la Cuenta</button>
+	</div>
+</aside>
+
+<main layout:fragment="main-content">
+	<form id="profileForm">
+		<div class="user-management-container_main ">
+			<div class="description-card">
+				<h1 class="title-management">Eliminar Cuenta</h1>
+				<p class="description-management">Para confirmar la eliminación de su cuenta, por favor, ingrese su contraseña: </p>
+			</div>
+			<form id="DeleteAccountForm">
+				<div class="row user-information">
+					<div class="form-fields">
+						<label for="deletePassword" class="section-title">Contraseña: 🔑</label>
+						<input type="password" class="form-control" id="deletePassword" name="deletePassword">
+					</div>
+
+					<div class="form-fields">
+						<label for="confirmPassword" class="section-title">Confirmar Contraseña: 🔑</label>
+						<input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
+					</div>
+				</div>
+				<div class="buttons-form-content">
+					<a th:href="@{/delete-account}" class="btn btn-inferior">Volver</a>
+					<button type="submit" class="btn btn-delete">Eliminar Cuenta</button>
+				</div>
+			</form>
+		</div>
+	</form>
+</main>
+
+
+
+</body>
+</html>
