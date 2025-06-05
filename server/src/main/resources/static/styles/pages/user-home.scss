@@ -1,8 +1,9 @@
 @use '../global-vars' as *;
 @use '../components/user-home/resume';
+@use '../components/MissionsComponent';
 
 body {
-	min-height: 100vh;
+	min-height: 100%;
 	margin: 0;
 	display: flex;
 	flex-direction: column;
