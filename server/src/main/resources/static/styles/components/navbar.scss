@@ -47,21 +47,70 @@ nav {
 .kn-navbar-links {
 	list-style: none;
 
-	li {
-		.nav-link {
-			color: white;
-			font-family: 'caveat-brush';
-			font-size: 20px;
-			text-decoration: none;
-			border-bottom: 2px solid transparent;
-			transition: border-color 0.3s ease;
+	.nav-link {
+		color: white;
+		font-family: 'caveat-brush';
+		font-size: 20px;
+		text-decoration: none;
+		border-bottom: 2px solid transparent;
+		transition: border-color 0.3s ease;
+	}
+
+	.nav-link:hover {
+		color: $secundary-100;
+		font-family: 'caveat-brush';
+		font-size: 20px;
+		border-bottom: 2px solid $secundary-100;
+	}
+
+	.kn-desplegable {
+		.perfil-img {
+			width: 50px;
+			height: 50px;
+			object-fit: cover; // Ajusta la imagen sin deformarla
+			border-radius: 50%;
+			border: 2px solid white;
 		}
 
-		.nav-link:hover {
-			color: $secundary-100;
-			font-family: 'caveat-brush';
-			font-size: 20px;
-			border-bottom: 2px solid $secundary-100;
+		.kn-desplegable-link {
+			border: none;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0; // Elimina relleno extra que pueda alterar el tamaño
+		}
+
+		.kn-desplegable-link:hover {
+			border: none;
+		}
+
+		.dropdown-menu{
+			background-color: $primary-100;
+		}
+
+		.kn-desplegable-links {
+			display: flex;
+			align-items: center;
+			font-family: 'inter';
+			font-size: 16px;
+			color: black;
+		}
+
+		.kn-desplegable-links:hover {
+			background-color: $secundary-100;
+		}
+
+		.kn-desplegable-links-lgt {
+			display: flex;
+			align-items: center;
+			font-family: 'inter';
+			font-size: 16px;
+			color: black;
+		}
+
+		.kn-desplegable-links-lgt:hover {
+			background-color: $danger-500;
+			color: white;
 		}
 	}
 }

@@ -19,27 +19,37 @@
 			<!-- Contenido colapsable -->
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<!-- Menú y enlaces -->
-					<ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-lg-flex gap-4 align-items-center kn-navbar-links">
-						<li class="nav-item">
-							<a class="nav-link" href="#">Inicio</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Tienda</a>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-							   data-bs-toggle="dropdown" aria-expanded="false">
-								Yo
-							</a>
-							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="#">Perfil</a></li>
-								<li><hr class="dropdown-divider"></li>
-								<li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-lg-flex gap-4 align-items-center kn-navbar-links">
+					<li class="nav-item">
+						<a class="nav-link" href="#">Inicio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Tienda</a>
+					</li>
+					<li class="nav-item dropdown kn-desplegable">
+						<a class="nav-link dropdown-toggle kn-desplegable-link" href="#" id="navbarDropdown" role="button"
+						   data-bs-toggle="dropdown" aria-expanded="false">
+							<img class="perfil-img" src="/images/logoWoutText.png" alt="Imágen de perfil">
+						</a>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+							<li>
+								<a class="dropdown-item kn-desplegable-links" href="#">
+									<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user me-1"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
+									Perfil
+								</a>
+							</li>
+							<li><hr class="dropdown-divider"></li>
+							<li>
+								<a class="dropdown-item kn-desplegable-links-lgt" href="#">
+									<svg xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-logout me-1"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /><path d="M9 12h12l-3 -3" /><path d="M18 15l3 -3" /></svg>
+									Cerrar sesión
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
 			</div>
+		</div>
 	</nav>
 </header>
 
