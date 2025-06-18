@@ -1,6 +1,7 @@
 package com.knowy.server.controller;
 
 import com.knowy.server.controller.model.OptionQuizDTO;
+import com.knowy.server.controller.model.QuestionDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,14 @@ public class QuizController {
 
 	public  QuizController() {
 
+	}
+	@GetMapping("/testQuestion")
+	public String testQuestion(ModelMap model) {
+		QuestionDTO questionDTO = new QuestionDTO("1","Question","images/knowylogo.png");
+		model.addAttribute("questionNumber", questionDTO.getQuestionNumber());
+		model.addAttribute("questionText", questionDTO.getQuestionText());
+		model.addAttribute("imgPath", questionDTO.getImgPath());
+		return "/pages/testQuestion";
 	}
 
 	//OptionsQuiz
