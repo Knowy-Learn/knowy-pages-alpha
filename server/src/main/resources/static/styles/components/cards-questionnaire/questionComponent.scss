@@ -30,7 +30,7 @@
 	border-radius: $radius-8 $radius-8 0 0;
 }
 
-.enunciado-header__enunciado-title-text {
+.enunciado-header__text {
 	flex-grow: 1;
 	text-align: left;
 }
@@ -44,14 +44,14 @@
 	padding: 5px;
 	transition: transform $transition-speed ease;
 
-.toggle-button .toggle-icon {
+	.toggle-button .toggle-icon {
 
+	}
 }
-
 .enunciado-container__enunciado-content {
 	margin-left: 10px;
 	padding: 15px;
-	background-color: white;
+	background-color: #EFEFEF;
 	border-top: 1px solid $neutral-300;
 	text-align: center;
 	font-size: 0.95em;
@@ -112,5 +112,4 @@
 	.enunciado-container__enunciado-content p {
 		font-size: 0.85em;
 	}
-}
 }

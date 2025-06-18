@@ -3,13 +3,13 @@
 
 	<div class="enunciado-container">
 		<div class="enunciado-container__enunciado-header">
-			<span th:text="${'Pregunta ' + questionNumber}" class="enunciado-header__text"></span>
+			<p th:text="${'Pregunta ' + questionNumber}" class="enunciado-header__text"></p>
 			<button class="toggle-button" id="toggleEnunciado">
 				<i class="fas fa-chevron-down toggle-icon"></i> </button>
 		</div>
 		<div class="enunciado-container__enunciado-content" id="enunciadoContent">
-			<span th:text="${questionText}" id="enunciadoText" class="enunciado-content__text">
-			</span>
+			<p th:text="${questionText}" id="enunciadoText" class="enunciado-content__text">
+			</p>
 		</div>
 	</div>
 
