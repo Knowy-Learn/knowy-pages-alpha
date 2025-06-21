@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Optional;
+
 @Controller
 public class AccessController {
 
@@ -47,9 +49,19 @@ public class AccessController {
 
 	@PostMapping("/login")
 	public String postLogin(@ModelAttribute("loginForm") LoginForm login, Model model) {
-		System.out.println("Email: " + login.getEmail() + " Password: " + login.getPassword() + "");
-		model.addAttribute("loginForm", login);
-		return "pages/access/login";
+		Optional<String> authToken = accessService.authenticateUser(login.getEmail(), login.getPassword());
+
+		if (authToken.isPresent()) {
+			String token = authToken.get();
+			// TODO: almacenar el token en sesión para uso posterior (JWT)
+			System.out.println("Login correcto. Token generado: " + token);
+
+			return "redirect:/home";
+		} else {
+			model.addAttribute("loginError", "¡Las credenciales son incorrectas!");
+			model.addAttribute("loginForm", new LoginForm());
+			return "pages/access/login";
+		}
 	}
 
 	@GetMapping("/password-change/email")

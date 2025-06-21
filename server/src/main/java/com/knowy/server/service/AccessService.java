@@ -4,6 +4,8 @@ import com.knowy.server.entity.PrivateUser;
 import com.knowy.server.repository.AccessRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class AccessService {
 
@@ -40,5 +42,20 @@ public class AccessService {
 
 	public void updateUserPassword(String token, String oldPassword, String newPassword) {
 		//TODO - Implementar descrifrado de Token y verificar datos ocultos para cambiar los datos vía AccessRepository
+	}
+
+	public Optional<String> authenticateUser(String email, String password) {
+		Optional<PrivateUser> foundUser = accessRepository.findUserByEmailAndPass(email);
+
+		if (foundUser.isPresent()) {
+			PrivateUser user = foundUser.get();
+
+			if (user.getPassword().equals(password)) {
+				String token = tokenService.createLoginToken(user.getEmail(), user.getId());
+				return Optional.of(token);
+			}
+		}
+
+		return Optional.empty();
 	}
 }
